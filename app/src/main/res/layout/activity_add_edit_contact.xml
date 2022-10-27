@@ -16,6 +16,7 @@
 
         <!--circular image view for the profile pic of a contact-->
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivContactImage"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
@@ -129,7 +130,7 @@
 
 <!--    Fab for saving data to DB-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fab_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -139,7 +140,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="25dp"
         app:backgroundTint="@color/colorTextPrimary"
-        android:src="@drawable/ic_baseline_add_24"
+        android:src="@drawable/ic_baseline_save_24"
         app:tint="@color/white"
         android:elevation="10dp"
         app:pressedTranslationZ="10dp"
