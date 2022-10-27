@@ -7,7 +7,7 @@
     android:background="@color/colorSecondary"
     tools:context=".MainActivity">
 
-<!--    fab for adding contacts-->
+<!--    Fab for adding contacts-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
