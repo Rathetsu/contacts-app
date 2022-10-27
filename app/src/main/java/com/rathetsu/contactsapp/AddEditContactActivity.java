@@ -1,11 +1,13 @@
 package com.rathetsu.contactsapp;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -15,10 +17,19 @@ public class AddEditContactActivity extends AppCompatActivity {
     private EditText etName, etPhone, etEmail, etAddress, etBio;
     private FloatingActionButton fabSave;
 
+    ActionBar actionBar;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_edit_contact);
+
+        actionBar = getSupportActionBar();
+        actionBar.setTitle("Add Contact");
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
 
         ivContactImage = findViewById(R.id.ivContactImage);
         etName = findViewById(R.id.ET_name);
@@ -45,11 +56,18 @@ public class AddEditContactActivity extends AppCompatActivity {
         String bio = etBio.getText().toString();
 
         if (name.trim().isEmpty() || phone.trim().isEmpty()) {
+            Toast.makeText(this, R.string.invalidSave_toast, Toast.LENGTH_SHORT).show();
             return;
         }
 
-        Contact contact = new Contact(name, phone, email, address, bio);
-        ContactDatabase.getInstance(this).getContactDao().insertContact(contact);
-        finish();
+        //save On SQLite
     }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return super.onSupportNavigateUp();
+    }
+
+
 }

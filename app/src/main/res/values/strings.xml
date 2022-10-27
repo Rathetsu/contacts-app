@@ -10,6 +10,7 @@
     <string name="delete">Delete</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="invalidSave_toast">Please insert a name and phone number</string>
     <string name="delete_contact">Delete Contact</string>
     <string name="delete_contact_message">Are you sure you want to delete this contact?</string>
     <string name="yes">Yes</string>
